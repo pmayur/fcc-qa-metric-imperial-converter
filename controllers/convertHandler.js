@@ -65,8 +65,30 @@ function ConvertHandler() {
     const lbsToKg = 0.453592;
     const miToKm = 1.60934;
     let result;
-    
-    return result;
+
+    switch(initUnit) {
+      case "mi" : {
+        return (initNum * miToKm).toFixed(5);
+      }
+      case "l" : {
+        return (initNum / miToKm).toFixed(5);
+      }
+      case "lbs" : {
+        return (initNum * lbsToKg).toFixed(5);
+      }
+      case "kg" : {
+        return (initNum / lbsToKg).toFixed(5);
+      }
+      case "gal" : {
+        return (initNum * galToL).toFixed(5);
+      }
+      case "l" : {
+        return (initNum / galToL).toFixed(5);
+      }
+      default : {
+        return new Error("invalid number and unit")
+      }
+    }
   };
   
   this.getString = function(initNum, initUnit, returnNum, returnUnit) {
