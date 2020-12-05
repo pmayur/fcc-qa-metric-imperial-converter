@@ -24,11 +24,11 @@ function ConvertHandler() {
     let regex = /[a-z]*$/i;
 
     // split the input into the characters at end and everything else
-    let result = input.split(regex)[0] || 1;
+    let result = input.split(regex)[0] || "1";
 
     // division / multiplication character exceeds 1
-    if (result.split('/').length - 1 > 1) return undefined;
-    if (result.split('.').length - 1 > 1) return undefined;
+    if ((result.split('/').length - 1) > 1) return undefined;
+    if ((result.split('.').length - 1) > 1) return undefined;
 
     try{
       result = eval(result)
