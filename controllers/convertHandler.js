@@ -11,6 +11,7 @@ function ConvertHandler() {
   let converter = {
     gal:  ["L", "gallons"],
     l:    ["gal", "liters"],
+    L:    ["gal", "liters"],
     lbs:  ["kg", "pounds"],
     kg:   ["lbs", "kilograms"],
     mi:   ["km", "miles"],
@@ -43,6 +44,7 @@ function ConvertHandler() {
     // match the regex and convert the match to lowercase
     let result = input.match(regex)[0].toLowerCase();
 
+    if(result == "l") return "L"
     if(converter.hasOwnProperty(result)) return result;
 
     return undefined;
@@ -82,7 +84,7 @@ function ConvertHandler() {
       case "gal" : {
         return (initNum * galToL).toFixed(5);
       }
-      case "l" : {
+      case "L" : {
         return (initNum / galToL).toFixed(5);
       }
       default : {
