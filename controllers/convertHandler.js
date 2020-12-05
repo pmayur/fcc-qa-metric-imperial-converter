@@ -55,6 +55,7 @@ function ConvertHandler() {
   };
 
   this.spellOutUnit = function(unit) {
+    unit = unit.toLowerCase();
     let result = converter[unit][1];
     
     return result;
