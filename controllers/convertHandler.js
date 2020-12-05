@@ -64,7 +64,6 @@ function ConvertHandler() {
     const galToL = 3.78541;
     const lbsToKg = 0.453592;
     const miToKm = 1.60934;
-    let result;
 
     switch(initUnit) {
       case "mi" : {
@@ -92,8 +91,12 @@ function ConvertHandler() {
   };
   
   this.getString = function(initNum, initUnit, returnNum, returnUnit) {
-    let result;
+    let spellInitUnit = this.spellOutUnit(initUnit);
+    let spellRetUnit  = this.spellOutUnit(returnUnit);
     
+    returnNum = parseFloat(returnNum)
+
+    let result = `${initNum} ${spellInitUnit} converts to ${returnNum} ${spellRetUnit}`;
     return result;
   };
   
