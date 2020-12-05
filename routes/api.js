@@ -26,13 +26,13 @@ module.exports = function (app) {
       let initUnit = convertHandler.getUnit(input);
       
       // both number and unit provided are invalid
-      if(!initNum && !initUnit) return res.status(400).send("invalid number and unit")
+      if(!initNum && !initUnit) return res.send("invalid number and unit")
 
       // number provided invalid
-      if(!initNum) return res.status(400).send("invalid number")
+      if(!initNum) return res.send("invalid number")
 
       // unit provided invalid
-      if(!initUnit) return res.status(400).send("invalid unit")
+      if(!initUnit) return res.send("invalid unit")
 
       let returnNum = convertHandler.convert(initNum, initUnit);
       let returnUnit = convertHandler.getReturnUnit(initUnit);
