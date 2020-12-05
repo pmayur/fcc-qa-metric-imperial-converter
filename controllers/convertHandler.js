@@ -94,8 +94,6 @@ function ConvertHandler() {
     let spellInitUnit = this.spellOutUnit(initUnit);
     let spellRetUnit  = this.spellOutUnit(returnUnit);
     
-    returnNum = parseFloat(returnNum)
-
     let result = `${initNum} ${spellInitUnit} converts to ${returnNum} ${spellRetUnit}`;
     return result;
   };
