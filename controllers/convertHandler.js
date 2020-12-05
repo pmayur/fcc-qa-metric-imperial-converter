@@ -29,7 +29,7 @@ function ConvertHandler() {
       result = eval(result)
     
     } catch(e) {
-      throw new Error('invalid number')
+      return undefined;
     }
 
     return result;
@@ -45,7 +45,7 @@ function ConvertHandler() {
 
     if(converter.hasOwnProperty(result)) return result;
 
-    throw new Error('invalid input')
+    return undefined;
   };
   
   this.getReturnUnit = function(initUnit) {
