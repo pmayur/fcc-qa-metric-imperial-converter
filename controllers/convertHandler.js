@@ -49,13 +49,13 @@ function ConvertHandler() {
   };
   
   this.getReturnUnit = function(initUnit) {
-    let result;
+    let result = converter[initUnit][0];
     
     return result;
   };
 
   this.spellOutUnit = function(unit) {
-    let result;
+    let result = converter[unit][1];
     
     return result;
   };
