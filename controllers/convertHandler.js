@@ -70,7 +70,7 @@ function ConvertHandler() {
       case "mi" : {
         return (initNum * miToKm).toFixed(5);
       }
-      case "l" : {
+      case "km" : {
         return (initNum / miToKm).toFixed(5);
       }
       case "lbs" : {
