@@ -9,8 +9,20 @@
 function ConvertHandler() {
   
   this.getNum = function(input) {
-    let result;
+
+    // regex for all characters at the end
+    let regex = /[a-z]*$/i;
+
+    // split the input into the characters at end and everything else
+    let result = input.split(regex)[0] || 1;
+
+    try{
+      result = eval(result)
     
+    } catch(e) {
+      throw new Error('invalid input')
+    }
+
     return result;
   };
   
